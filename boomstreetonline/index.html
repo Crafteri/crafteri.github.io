@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<title>Boom Street Online</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+</style>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container">
+    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
+      <i class="fa fa-remove"></i>
+    </a>
+    <img src="img/server-icon.png" style="width:35%;" class="w3-round"><br><br>
+    <h4><b>Boom Street Online</b></h4>
+    <div id="rest"><img src="img/loader.png" class="w3-spin" style="font-size:64px"></div>
+	<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+	<script id="rendered-js" >
+	//based on a pen by @robinselmer
+	var url = "https://api.minetools.eu/ping/boomstreet.asuscomm.com/25565";
+
+	$.getJSON(url, function (r) {
+	//data is the JSON string
+	if (r.error) {
+		$('#rest').html('<p style="color:Red;"><b>YHTEYSVIRHE</b><br>Telian verkossa on käyttökatko.</p>');
+		return false;
+	} else {
+		$('#rest').html('<p style="color:LimeGreen;"><b>ONLINE</b><br>Palvelin on käytettävissä.</p>');
+	}
+
+	});
+	//# sourceURL=pen.js
+	</script>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#tapahtumat" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>TAPAHTUMAT</a> 
+    <a href="#tietoa" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-info fa-fw w3-margin-right"></i>TIETOA</a> 
+    <a href="#kauppa" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shopping-cart fa-fw w3-margin-right"></i>KAUPPA</a>
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Header -->
+  <header id="tapahtumat">
+    <a href="#"><img src="img/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    <div class="w3-container">
+    <h1><b>Tapahtumat</b></h1>
+    </div>
+  </header>
+  
+  <!-- First Photo Grid-->
+  <div class="w3-row-padding">
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="img/tapahtuma1.png" alt="Raspberry Pi 4" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Anti X-ray</b></p>
+        <p>Anti X-ray estää luusereita hakemasta pelkästään malmit maan uumenista. Pelatkaa rehellisesti!</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="img/tapahtuma2.png" alt="Raspberry Pi 4" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>TabTPS</b></p>
+        <p>Pelaajalistalta näkee sekä TPS:n että oman viiveen millisekunteina.</p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <img src="img/tapahtuma3.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <div class="w3-container w3-white">
+        <p><b>Resurssipaketti</b></p>
+        <p>Olen saanut kuulla liikaa valituksia siitä, että pelaajat ovat kuolleet peliin liittyessään. Lataa palvelimen resurssit itselle, jos haluat nauttia pienistä parannuksista ilman latausruutua.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Images of Me -->
+  <div class="w3-row-padding w3-padding-16" id="tietoa">
+    <div class="w3-col m6">
+      <img src="img/tietoa1.png" alt="IP" style="width:100%">
+    </div>
+    <div class="w3-col m6">
+      <img src="img/tietoa2.png" alt="Me" style="width:100%">
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h4><b>Tietoa</b></h4>
+    <p><b>Palvelimen IP:</b><br>boomstreet.asuscomm.com</p>
+    <p><b>Yhdistäminen ei onnistu:</b><br>Vain whitelistatut pelaajat pääsevät palvelimelle. Jos olet whitelistattu, tarkista palvelimen tila sivun valikosta.</p>
+    <p><b>Huijaamisen raportointi:</b><br>Huijaaminen ei ole siedettyä palvelimella, ja kehotamme pelaamaan huijauskoodeilla anarkiapalvelimilla Boom Streetin sijaan. Lähetä multimediaa, jossa huijaaminen näkyy. Jos haluat raportoida vapaakamera-huijauksen käytöstä, ainoa todistusaineisto on grieffaaminen alueelle tunkeutumisesta.</p>
+    <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-large w3-grey">
+    <h4 id="kauppa"><b>Kauppa</b></h4>
+    <hr class="w3-opacity">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Kustomoitu Nimilappu</li>
+          <li class="w3-padding-16">
+            <h2>1€</h2>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <a href="https://www.paypal.me/niemikalle"><button class="w3-button w3-teal w3-padding-large w3-hover-black" >Osta</button></a>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Porttikiellon anteeksianto</li>
+          <li class="w3-padding-16">
+            <h2>3€</h2>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <a href="https://www.paypal.me/niemikalle"><button class="w3-button w3-teal w3-padding-large w3-hover-black" >Osta</button></a>
+          </li>
+        </ul>
+      </div>
+      <div class="w3-third w3-margin-bottom">
+        <ul class="w3-ul w3-border w3-white w3-center w3-opacity w3-hover-opacity-off">
+          <li class="w3-teal w3-xlarge w3-padding-32">Donate</li>
+          <li class="w3-padding-16">
+            <h2>Vapaaehtoinen €</h2>
+          </li>
+          <li class="w3-light-grey w3-padding-24">
+            <a href="https://www.paypal.me/niemikalle"><button class="w3-button w3-teal w3-padding-large w3-hover-black" >Lahjoita</button></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-dark-grey">
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <h3>Lakitekniset tiedot</h3>
+      <p>Porttikiellon saaminen on ehdotonta, ja siihen ei voi vedota. Palvelimen pyytämät maksut ovat henkilökohtaisia maksuja, eikä niillä ole tekemistä minkään yhtiön kanssa</p>
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div>
+  </div>
+  </footer>
+  
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+    document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myOverlay").style.display = "none";
+}
+
+</script>
+</body>
+</html>
