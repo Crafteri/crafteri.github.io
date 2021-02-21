@@ -31,7 +31,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	$.getJSON(url, function (r) {
 	//data is the JSON string
 	if (r.error) {
-		$('#rest').html('<p style="color:Red;"><b>YHTEYSVIRHE</b><br>Telian verkossa on käyttökatko.</p>');
+		$('#rest').html('<p style="color:Red;"><b>YHTEYSVIRHE</b><br>Palvelin on suljettu tai verkossa on käyttökatko.</p>');
 		return false;
 	} else {
 		$('#rest').html('<p style="color:LimeGreen;"><b>ONLINE</b><br>Palvelin on käytettävissä.</p>');
@@ -42,8 +42,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	</script>
   </div>
   <div class="w3-bar-block">
-    <a href="#tapahtumat" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>TAPAHTUMAT</a> 
     <a href="#tietoa" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-info fa-fw w3-margin-right"></i>TIETOA</a> 
+	<a href="#lataukset" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-download fa-fw w3-margin-right"></i>LATAUKSET</a>
     <a href="#kauppa" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-shopping-cart fa-fw w3-margin-right"></i>KAUPPA</a>
   </div>
 </nav>
@@ -55,56 +55,40 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px">
 
   <!-- Header -->
-  <header id="tapahtumat">
-    <a href="#"><img src="img/server-icon.png" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+  <header id="tietoa">
+    <a href="#"><img src="img/server-icon.png" style="width:65px;" class=" w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1><b>Tapahtumat</b></h1>
-    </div>
+    <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+    <h1><b>Tietoa</b></h1>
+	<div class="w3-container">
+    <p><b>Palvelimen IP:</b><br>boomstreet.asuscomm.com</p>
+    <p><b>Yhdistäminen ei onnistu:</b><br>Vain whitelistatut pelaajat pääsevät palvelimelle. Jos olet whitelistattu etkä pääse sisään, tarkista palvelimen tila sivun valikosta.<br>Mikäli näet virheen "Unknown host", kokeile myöhemmin uudelleen.</p>
+	</div>
   </header>
-  
-  <!-- First Photo Grid-->
+
+  <div class="w3-container w3-padding-large" style="margin-bottom:32px" id="lataukset">
+    <h1><b>Lataukset</b></h1>
   <div class="w3-row-padding">
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="img/tapahtuma1.png" alt="Raspberry Pi 4" style="width:100%" class="w3-hover-opacity">
+      <a href="https://boomstreet.asuscomm.com/s/fDQWiH4xYfNX79Y"><img src="img/kuva1.png" alt="1. Kausi" style="width:100%" class="w3-hover-opacity"></a>
       <div class="w3-container w3-white">
-        <p><b>Anti X-ray</b></p>
-        <p>Anti X-ray estää luusereita hakemasta pelkästään malmit maan uumenista. Pelatkaa rehellisesti!</p>
+        <p><b>1. Kausi</b></p>
       </div>
     </div>
     <div class="w3-third w3-container w3-margin-bottom">
-      <img src="img/tapahtuma2.png" alt="Raspberry Pi 4" style="width:100%" class="w3-hover-opacity">
+      <a href="https://boomstreet.asuscomm.com/s/AXsssP9fnmbyrGx"><img src="img/kuva2.png" alt="2. Kausi" style="width:100%" class="w3-hover-opacity"></a>
       <div class="w3-container w3-white">
-        <p><b>TabTPS</b></p>
-        <p>Pelaajalistalta näkee sekä TPS:n että oman viiveen millisekunteina.</p>
+        <p><b>2. Kausi</b></p>
       </div>
     </div>
     <div class="w3-third w3-container">
-      <img src="img/tapahtuma3.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+      <img src="img/kuva3.png" alt=" " style="width:100%" >
       <div class="w3-container w3-white">
-        <p><b>Resurssipaketti</b></p>
-        <p>Olen saanut kuulla liikaa valituksia siitä, että pelaajat ovat kuolleet peliin liittyessään. Lataa palvelimen resurssit itsellesi, jos haluat nauttia pienistä parannuksista ilman latausruutua.</p>
+        <p><b>　</b></p>
       </div>
     </div>
   </div>
-
-  <!-- Images of Me -->
-  <div class="w3-row-padding w3-padding-16" id="tietoa">
-    <div class="w3-col m6">
-      <img src="img/tietoa1.png" alt="IP" style="width:100%">
-    </div>
-    <div class="w3-col m6">
-      <img src="img/tietoa2.png" alt="Me" style="width:100%">
-    </div>
-  </div>
-
-  <div class="w3-container w3-padding-large" style="margin-bottom:32px">
-    <h4><b>Tietoa</b></h4>
-    <p><b>Palvelimen IP:</b><br>boomstreet.asuscomm.com</p>
-    <p><b>Yhdistäminen ei onnistu:</b><br>Vain whitelistatut pelaajat pääsevät palvelimelle. Jos olet whitelistattu, tarkista palvelimen tila sivun valikosta.</p>
-    <p><b>Huijaamisen raportointi:</b><br>Huijaaminen ei ole siedettyä palvelimella, ja kehotamme pelaamaan huijauskoodeilla anarkiapalvelimilla Boom Streetin sijaan. Lähetä multimediaa, jossa huijaaminen näkyy. Jos haluat raportoida vapaakamera-huijauksen käytöstä, ainoa todistusaineisto on grieffaaminen alueelle tunkeutumisesta.</p>
-    <hr>
-
+	
   <!-- Contact Section -->
   <div class="w3-container w3-padding-large w3-grey">
     <h4 id="kauppa"><b>Kauppa</b></h4>
